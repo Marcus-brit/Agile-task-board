@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2cea52;
+  padding: 2rem;
+}
+
+.kanban-column {
+  background-color: burlywood;
+  width: 350px;
+  color: aqua;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid;
+  box-shadow: black;
+}
+
+.column-header h2 {
+  font-size: 1.2rem;
+  color: chartreuse;
+  margin-bottom: 1rem;
+}
+.task-card {
+    background-color: hwb(52 14% 5%);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    box-shadow: #2cea52;
+
+
+}
+.task-card h3{
+    font-size: 1rem;
+    color: brown;
+    margin-bottom: 1rem;
+
+}
+
+.task-card p{
+  font-size: 0.9;
+  color: white;
+}
+
+.task-tag {
+  font-size: 0.9;
+  background-color: #0052cc;
+  color: #ffffff;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 9px;
+}
+ 
