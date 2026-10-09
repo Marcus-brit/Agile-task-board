@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agile Task Board</title>
+    <title>Agile Task Board - layout positioning</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Main application container -->
+    <!-- Sticky Application Header -->
+    <header class="app-header">
+      <div class="header-brand">
+        <h1>Agile Task Board</h1>
+      </div>
+      <nav class="navbar"
+      <ul> 
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Settings</a></li>
+
+      </ul>
+       </nav>
+         <button 
+             class="btn-primary" 
+             id="open-modal-btn"
+              onclick="
+                document.getElementById ('task-modal').style.display = 'flex'
+           "
+        >
+             + New Task
+        </button>
+    </header>
+
+    <!-- Main board container -->
     <main class="kanban-board">
       <!-- A single Kaban column -->
       <section class="kanban-column">
@@ -16,17 +40,82 @@
         </header>
 
         <!-- Task Card 1 -->
-        <article class="task-card">
+        <article class="task-card" onclick=" document.getElementById('task-sidebar').classList.toggle('open')">
+                  <button class="card-action-btn" aria-label="Task options">
+            &vellip;
+           </button>
+            <div class="task-context-menu">
+              <button class="menu-iem">Edit Task</button>
+              <button class="menu-iem">move column</button>
+              <button class="menu-iem">Delete Task</button>
+        
+            </div>
+      
           <span class="task-tag">Backend</span>
           <h3>Setup Database Schema</h3>
           <p>Design PostgreSQL tables for users and task</p>
         </article>
 
         <article class="task-card">
+          <button class="card-action-btn" aria-label="Task options">
+            &vellip;
+          </button>
+                      <div class="task-context-menu">
+              <button class="menu-iem">Edit Task</button>
+              <button class="menu-iem">move column</button>
+              <button class="menu-iem">Delete Task</button>
+        
+            </div>
+          <span class="task-tag">Architecture</span>
           <h3>Configure FastAPI Routing</h3>
           <p>Set up base REST endpoints for the task model</p>
         </article>
       </section>
     </main>
+
+    <!-- Fixed Visual Overlay Modal Backdrop -->
+    <div class="modal-backdrop" id="task-modal">
+      <div
+        class="modal-dialog"
+        role="dialog"
+        aria-labelledby="modal-title"
+        aria-modal="true"
+      >
+        <button class="modal-close-btn" aria-label="Close modal" onclick="document.getElementById('task-modal').style.display = 'none'">
+          &times;
+        </button>
+        <h2 id="modal-title">Create New Task</h2>
+        <form class="modal-form">
+          <label for="task-title">Task Title</label>
+          <input
+            type="text"
+            id="task-title"
+            name="title"
+            placeholder="e.g., Implement JWT Auth"
+            required
+          />
+
+          <label for="task-desc">Description</label>
+          <textarea
+            id="task-desc"
+            name="description"
+            rows="4"
+            placeholder="Task details..."
+          ></textarea>
+
+        <div class="modal-footer">
+     
+          <button type="button" class="btn-danger">Delete Task</button>
+          
+          <div class="modal-actions-right">
+            <button type="button" class="btn-secondary">Cancel</button>
+            <button type="submit" class="btn-primary">Save Task</button>
+          </div>
+        </div>
+        
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
