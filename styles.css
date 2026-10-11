@@ -529,9 +529,8 @@ body {
   box-sizing: border-box;
 }
 
-
 .project-card {
-  background-color: #0052cc; 
+  background-color: #0052cc;
   color: #daa520;
   border: 1px solid #e2e8f0;
   padding: 1.5rem;
@@ -539,8 +538,6 @@ body {
   box-shadow: 0 4px 6px -1px rgba(248, 232, 0, 0.596);
   transition: all 0.2s ease-in-out;
   border: none;
- 
-
 }
 
 /* Custom Card Hover Lift */
